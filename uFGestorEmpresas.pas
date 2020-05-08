@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Buttons, Vcl.StdCtrls,
-  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.WinXPanels;
+  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.WinXPanels,
+
+  {Librerias de nuestra aplicación}
+  uFEmpresa;
 
 type
   TFGestorEmpresa = class(TForm)
@@ -21,7 +24,7 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Label1: TLabel;
-    SpeedButton1: TSpeedButton;
+    sbNuevaEmpresa: TSpeedButton;
     Panel4: TPanel;
     Panel5: TPanel;
     Panel6: TPanel;
@@ -35,12 +38,15 @@ type
     Card1: TCard;
     Card2: TCard;
     Card3: TCard;
-    Label3: TLabel;
+    lbEmpresa: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    btEditar: TButton;
     procedure Autor1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure tvMenuLateralClick(Sender: TObject);
+    procedure sbNuevaEmpresaClick(Sender: TObject);
+    procedure btEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,6 +72,21 @@ begin
 end;
 
 { Cuando se lanza la aplicación }
+procedure TFGestorEmpresa.btEditarClick(Sender: TObject);
+begin
+  { Enviar parámetros }
+  FEmpresa.NombreEmpresa := lbEmpresa.Caption;
+  FEmpresa.Accion := 'Editar';
+  FEmpresa.ShowModal;
+
+  { Espera ... }
+  if FEmpresa.CreoEmpresa then
+  begin
+    ShowMessage(FEmpresa.NombreEmpresa);
+    lbEmpresa.Caption := FEmpresa.NombreEmpresa;
+  end;
+end;
+
 procedure TFGestorEmpresa.FormCreate(Sender: TObject);
 begin
   BarraEstado.Panels[3].Text := 'Gestor de Empresas';
@@ -79,6 +100,21 @@ begin
   Contenido.ActiveCard := Card1;
 end;
 
+procedure TFGestorEmpresa.sbNuevaEmpresaClick(Sender: TObject);
+begin
+  { Enviar parámetros }
+  FEmpresa.Accion := 'Crear';
+  FEmpresa.ShowModal;
+
+  { Espera ... }
+  if FEmpresa.CreoEmpresa then
+  begin
+    ShowMessage(FEmpresa.NombreEmpresa);
+    lbEmpresa.Caption := FEmpresa.NombreEmpresa;
+  end;
+end;
+
+{ Evento para crear una empresa }
 procedure TFGestorEmpresa.tvMenuLateralClick(Sender: TObject);
 begin
   if tvMenuLateral.Selected <> nil then

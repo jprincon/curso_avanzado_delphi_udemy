@@ -1,0 +1,92 @@
+object FEmpresa: TFEmpresa
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Nueva Empresa'
+  ClientHeight = 153
+  ClientWidth = 618
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 618
+    Height = 45
+    Align = alTop
+    Caption = 'Empresa'
+    Color = 12615680
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -32
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object GroupBox1: TGroupBox
+    AlignWithMargins = True
+    Left = 10
+    Top = 55
+    Width = 598
+    Height = 49
+    Margins.Left = 10
+    Margins.Top = 10
+    Margins.Right = 10
+    Margins.Bottom = 10
+    Align = alTop
+    Caption = 'Nombre de la Empresa'
+    TabOrder = 1
+    object edEmpresa: TEdit
+      Left = 2
+      Top = 21
+      Width = 594
+      Height = 26
+      Align = alClient
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 16711808
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      ExplicitHeight = 27
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 108
+    Width = 618
+    Height = 45
+    Align = alBottom
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object sbGuardar: TSpeedButton
+      AlignWithMargins = True
+      Left = 514
+      Top = 4
+      Width = 100
+      Height = 37
+      Align = alRight
+      Caption = 'Guardar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      OnClick = sbGuardarClick
+      ExplicitLeft = 608
+      ExplicitHeight = 73
+    end
+  end
+end

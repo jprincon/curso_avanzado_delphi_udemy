@@ -2,8 +2,8 @@ object FGestorEmpresa: TFGestorEmpresa
   Left = 0
   Top = 0
   Caption = 'Gestor de Empresas'
-  ClientHeight = 697
-  ClientWidth = 969
+  ClientHeight = 814
+  ClientWidth = 1128
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,14 +20,13 @@ object FGestorEmpresa: TFGestorEmpresa
   object MenuPrincipal2: TPageControl
     Left = 0
     Top = 0
-    Width = 969
+    Width = 1128
     Height = 161
-    ActivePage = TabAcerca
+    ActivePage = TabArchivo
     Align = alTop
     TabOrder = 0
     object TabArchivo: TTabSheet
       Caption = 'Archivo'
-      ExplicitHeight = 95
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -35,7 +34,6 @@ object FGestorEmpresa: TFGestorEmpresa
         Height = 127
         Align = alLeft
         TabOrder = 0
-        ExplicitHeight = 95
         object Panel2: TPanel
           Left = 1
           Top = 106
@@ -47,8 +45,6 @@ object FGestorEmpresa: TFGestorEmpresa
           Color = clSkyBlue
           ParentBackground = False
           TabOrder = 0
-          ExplicitTop = 69
-          ExplicitWidth = 447
         end
         object Panel3: TPanel
           AlignWithMargins = True
@@ -76,11 +72,10 @@ object FGestorEmpresa: TFGestorEmpresa
             ParentFont = False
             Layout = tlCenter
             WordWrap = True
-            ExplicitTop = 37
             ExplicitWidth = 49
             ExplicitHeight = 32
           end
-          object SpeedButton1: TSpeedButton
+          object sbNuevaEmpresa: TSpeedButton
             Left = 0
             Top = 0
             Width = 73
@@ -306,6 +301,7 @@ object FGestorEmpresa: TFGestorEmpresa
               FCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFCFC
               FCFCFCFCFCFCFCFCFCFCFEFEFEFFFFFFFEFEFEFEFEFEFFFFFFFFFFFFFFFFFFFF
               FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+            OnClick = sbNuevaEmpresaClick
           end
         end
       end
@@ -313,7 +309,6 @@ object FGestorEmpresa: TFGestorEmpresa
     object TabAcerca: TTabSheet
       Caption = 'Acerca de ...'
       ImageIndex = 1
-      ExplicitHeight = 95
       object Panel4: TPanel
         Left = 0
         Top = 0
@@ -321,7 +316,6 @@ object FGestorEmpresa: TFGestorEmpresa
         Height = 127
         Align = alLeft
         TabOrder = 0
-        ExplicitLeft = 8
         object Panel5: TPanel
           Left = 1
           Top = 106
@@ -597,8 +591,8 @@ object FGestorEmpresa: TFGestorEmpresa
   end
   object BarraEstado: TStatusBar
     Left = 0
-    Top = 672
-    Width = 969
+    Top = 789
+    Width = 1128
     Height = 25
     Panels = <
       item
@@ -627,7 +621,7 @@ object FGestorEmpresa: TFGestorEmpresa
     Left = 0
     Top = 161
     Width = 292
-    Height = 511
+    Height = 628
     ActivePage = TabMenu
     Align = alLeft
     MultiLine = True
@@ -639,65 +633,58 @@ object FGestorEmpresa: TFGestorEmpresa
         Left = 0
         Top = 0
         Width = 258
-        Height = 503
+        Height = 620
         Align = alClient
         Indent = 19
         ReadOnly = True
         RowSelect = True
         TabOrder = 0
         OnClick = tvMenuLateralClick
-        ExplicitLeft = 16
-        ExplicitTop = 24
-        ExplicitWidth = 217
-        ExplicitHeight = 409
       end
     end
   end
   object Contenido: TCardPanel
     Left = 292
     Top = 161
-    Width = 677
-    Height = 511
+    Width = 836
+    Height = 628
     Align = alClient
-    ActiveCard = Card3
+    ActiveCard = Card1
     Caption = 'Contenido'
     TabOrder = 3
-    ExplicitLeft = 488
-    ExplicitTop = 240
-    ExplicitWidth = 297
-    ExplicitHeight = 249
     object Card1: TCard
       Left = 1
       Top = 1
-      Width = 675
-      Height = 509
+      Width = 834
+      Height = 626
       Caption = 'Card1'
       CardIndex = 0
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
-      object Label3: TLabel
-        Left = 64
-        Top = 48
+      object lbEmpresa: TLabel
+        Left = 32
+        Top = 24
         Width = 129
         Height = 19
         Caption = 'Estoy en el Card 1'
+      end
+      object btEditar: TButton
+        Left = 32
+        Top = 48
+        Width = 129
+        Height = 25
+        Caption = 'Editar'
+        TabOrder = 0
+        OnClick = btEditarClick
       end
     end
     object Card2: TCard
       Left = 1
       Top = 1
-      Width = 675
-      Height = 509
+      Width = 834
+      Height = 626
       Caption = 'Card2'
       CardIndex = 1
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Label4: TLabel
         Left = 72
         Top = 56
@@ -709,15 +696,11 @@ object FGestorEmpresa: TFGestorEmpresa
     object Card3: TCard
       Left = 1
       Top = 1
-      Width = 675
-      Height = 509
+      Width = 834
+      Height = 626
       Caption = 'Card3'
       CardIndex = 2
       TabOrder = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Label5: TLabel
         Left = 80
         Top = 64
